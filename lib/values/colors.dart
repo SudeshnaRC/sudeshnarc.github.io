@@ -8,4 +8,6 @@ class AppColors {
   static const Color black = Color(0xFF000000);
 
   static const Color textSelectionColor = Color(0xFF1C00FF);
+
+  static const Color grey600 = Color(0xFF757575);
 }

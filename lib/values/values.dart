@@ -6,3 +6,4 @@ import 'package:flutter/widgets.dart';
 part 'colors.dart';
 part 'sizes.dart';
 part 'strings.dart';
+part 'animations.dart';
