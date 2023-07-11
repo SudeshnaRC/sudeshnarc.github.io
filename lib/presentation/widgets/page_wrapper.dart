@@ -1,6 +1,8 @@
 import 'package:portfolio/core/layout/adaptive.dart';
 import 'package:portfolio/presentation/pages/home/home_page.dart';
+import 'package:portfolio/presentation/pages/widgets/nav_bar.dart';
 import 'package:portfolio/presentation/widgets/empty.dart';
+import 'package:portfolio/presentation/widgets/app_drawer.dart';
 import 'package:portfolio/values/values.dart';
 import 'package:flutter/material.dart';
 
@@ -104,47 +106,47 @@ class _PageWrapperState extends State<PageWrapper>
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: widget.backgroundColor,
-      // drawer: AppDrawer(
-      //   controller: widget.navBarAnimationController,
-      //   menuList: Data.menuItems,
-      //   selectedItemRouteName: widget.selectedRoute,
-      // ),
+      drawer: AppDrawer(
+        controller: widget.navBarAnimationController,
+        menuList: Data.menuItems,
+        selectedItemRouteName: widget.selectedRoute,
+      ),
       body: Stack(
         children: [
           widget.child,
-          // NavBar(
-          //   selectedRouteTitle: widget.selectedPageName,
-          //   controller: widget.navBarAnimationController,
-          //   selectedRouteName: widget.selectedRoute,
-          //   hasSideTitle: widget.hasSideTitle,
-          //   appLogoColor: widget.appLogoColor,
-          //   titleColor: widget.navBarTitleColor,
-          //   selectedTitleColor: widget.navBarSelectedTitleColor,
-          //   onNavItemWebTap: (String route) {
-          //     forwardSlideController.forward();
-          //     forwardSlideController.addStatusListener((status) {
-          //       if (status == AnimationStatus.completed) {
-          //         if (route == HomePage.homePageRoute) {
-          //           Navigator.of(context).pushNamed(
-          //             route,
-          //             arguments: NavigationArguments(
-          //               showUnVeilPageAnimation: true,
-          //             ),
-          //           );
-          //         } else {
-          //           Navigator.of(context).pushNamed(route);
-          //         }
-          //       }
-          //     });
-          //   },
-          //   onMenuTap: () {
-          //     if (_scaffoldKey.currentState!.isEndDrawerOpen) {
-          //       _scaffoldKey.currentState?.openEndDrawer();
-          //     } else {
-          //       _scaffoldKey.currentState?.openDrawer();
-          //     }
-          //   },
-          // ),
+          NavBar(
+            selectedRouteTitle: widget.selectedPageName,
+            controller: widget.navBarAnimationController,
+            selectedRouteName: widget.selectedRoute,
+            hasSideTitle: widget.hasSideTitle,
+            appLogoColor: widget.appLogoColor,
+            titleColor: widget.navBarTitleColor,
+            selectedTitleColor: widget.navBarSelectedTitleColor,
+            onNavItemWebTap: (String route) {
+              forwardSlideController.forward();
+              forwardSlideController.addStatusListener((status) {
+                if (status == AnimationStatus.completed) {
+                  if (route == HomePage.homePageRoute) {
+                    Navigator.of(context).pushNamed(
+                      route,
+                      arguments: NavigationArguments(
+                        showUnVeilPageAnimation: true,
+                      ),
+                    );
+                  } else {
+                    Navigator.of(context).pushNamed(route);
+                  }
+                }
+              });
+            },
+            onMenuTap: () {
+              if (_scaffoldKey.currentState!.isEndDrawerOpen) {
+                _scaffoldKey.currentState?.openEndDrawer();
+              } else {
+                _scaffoldKey.currentState?.openDrawer();
+              }
+            },
+          ),
           LoadingSlider(
             controller: forwardSlideController,
             width: widthOfScreen(context),
