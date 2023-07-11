@@ -1,6 +1,6 @@
 import 'package:portfolio/core/layout/adaptive.dart';
-// import 'package:portfolio/core/utils/functions.dart';
-// import 'package:portfolio/presentation/widgets/portfolio_button.dart';
+import 'package:portfolio/core/utils/functions.dart';
+import 'package:portfolio/presentation/widgets/resume_button.dart';
 import 'package:portfolio/presentation/widgets/animated_text_slide_box_transition.dart';
 import 'package:portfolio/presentation/widgets/app_logo.dart';
 import 'package:portfolio/presentation/widgets/empty.dart';
@@ -102,18 +102,18 @@ class NavBar extends StatelessWidget {
               AppLogo(titleColor: appLogoColor),
               Spacer(),
               ..._buildNavItems(context, menuList: Data.menuItems),
-              // portfolioButton(
-              //   height: Sizes.HEIGHT_36,
-              //   hasIcon: false,
-              //   width: 80,
-              //   buttonColor: AppColors.white,
-              //   borderColor: appLogoColor,
-              //   onHoverColor: appLogoColor,
-              //   title: StringConst.RESUME.toUpperCase(),
-              //   onPressed: () {
-              //     Functions.launchUrl(DocumentPath.CV);
-              //   },
-              // ),
+              ResumeButton(
+                height: Sizes.HEIGHT_36,
+                hasIcon: false,
+                width: 80,
+                buttonColor: AppColors.white,
+                borderColor: appLogoColor,
+                onHoverColor: appLogoColor,
+                title: StringConst.RESUME.toUpperCase(),
+                onPressed: () {
+                  Functions.launchUrl(DocumentPath.CV);
+                },
+              ),
             ],
           ),
           Spacer(),

@@ -11,3 +11,4 @@ part 'data.dart';
 part 'strings.dart';
 part 'animations.dart';
 part 'images.dart';
+part 'docs.dart';

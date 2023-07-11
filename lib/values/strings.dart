@@ -31,6 +31,7 @@ class StringConst {
   static const String SCROLL_DOWN = "Scroll Down";
 
   static const String HOME = "Home";
+  static const String RESUME = "Resume";
 
   //routes
   static const String HOME_PAGE = "/home";
