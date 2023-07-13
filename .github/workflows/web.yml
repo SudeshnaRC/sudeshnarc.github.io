@@ -2,7 +2,7 @@ name: Gh-Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -10,8 +10,8 @@ jobs:
 
     steps:
       - name: Checkout repository
-         uses: actions/checkout@v2 # Only works with v2
-         
+        uses: actions/checkout@v2 # Only works with v2
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v1
         with:
